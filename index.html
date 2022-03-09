@@ -1,5 +1,6 @@
 <head>
 <title>Haha yes</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <style>
 body {
   margin: 0;
@@ -60,19 +61,155 @@ body {
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
+.glitch {
+  position: relative;
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.04em, -0.03em);
+  opacity: 0.75;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+  }
+}
+.fade-away {
+  opacity: 0;
+}
+.shakingPage {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.blackBG {
+background-image: linear-gradient(#000000, #ffffff);
+color: #000000;
+}
 </style>
 </head>
 <body>
-<center><h1>The perfect bot to make ur server based lmao</h1></center>
-<center><button class="inviteBtn" onclick="location.href = 'https://discord.com/api/oauth2/authorize?client_id=933939804272488528&permissions=8&scope=bot';">INVITE DA BAMBAH</button></center>
-<center><h2>BambiBot's features:</h2></center>
-<center><h2>- Pog music commands</h2></center>
-<center><h2>- Poggy updates almost every day</h2></center>
-<center><h2>- Joke commands. <b>A LOT</b> of joke commands.</h2></center>
-<center><h2>- A command where you can see news about Discord, like new controversy stuff or even Discord hackers</h2></center>
-<center><image src="https://cdn.discordapp.com/attachments/922350611553460277/922529279101784124/SECRET_SONG_COVER.png"</image></center>
-<!-- hitwebcounter Code START -->
-<center><h2>Ugly ass visitor counter (I cant pick any other counter style sorry)</h2></center>
-<a href="https://www.hitwebcounter.com" target="_blank">
-<center><img src="https://hitwebcounter.com/counter/counter.php?page=7957704&style=0010&nbdigits=6&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a></center>                                    
+<center><h1 id="title">The perfect bot to make ur server based lmao</h1></center>
+<center><button class="inviteBtn" id="inviteBtn" onclick="location.href = 'https://discord.com/api/oauth2/authorize?client_id=933939804272488528&permissions=8&scope=bot';">INVITE DA BAMBAH</button></center>
+<center><h2 id="bamberfeaturestxt">BambiBot's features:</h2></center>
+<center><h2 id="bamberfeaturestxt1">- Pog music commands</h2></center>
+<center><h2 id="bamberfeaturestxt2">- Poggy updates almost every day</h2></center>
+<center><h2 id="bamberfeaturestxt3">- Joke commands. <b>A LOT</b> of joke commands.</h2></center>
+<center><h2 id="bamberfeaturestxt4">- A command where you can see news about Discord, like new controversy stuff or even Discord hackers</h2></center>
+<center><image id="bamber" src="https://cdn.discordapp.com/attachments/922350611553460277/922529279101784124/SECRET_SONG_COVER.png"</image></center>
+<div class="glitchTxt" id="glitch">
+<!-- GOOD JOB. IT SEEMS YOU DISCOVERED ME. -->
+<center><p>🖂 ☯☼☜👎✌👍❄☜👎☸</p></center></div>
+<script>
+$(document).ready(function() {
+    	var isGaster = false
+	if (isGaster === false) {
+	  $(".glitchTxt").addClass("fade-away");
+	let mouseIn = false;
+  // glitch fades away after 10ms
+  setInterval(function() {
+    if (!mouseIn) {
+        $(".glitchTxt").addClass("fade-away");
+    }
+  }, 10);
+
+    $('.glitchTxt').on('mouseenter', () => {
+    mouseIn = true;
+  });
+  
+  $('.glitchTxt').on('mouseleave', () => {
+    mouseIn = false;
+  });
+
+  // glitch pops up on hover
+  $(".glitchTxt").hover(function() {
+    $(".glitchTxt").removeClass("fade-away")
+  });
+  $(".glitchTxt").click(function() {
+	$(".glitchTxt").addClass("fade-away")
+	$("body").addClass("glitch");
+	$("body").addClass("shakingPage");
+	$("body").addClass("blackBG");
+	$("#bamber").attr("src","https://static.wikia.nocookie.net/character-stats-and-profiles/images/d/de/Mysteryman_overworld.png/revision/latest/scale-to-width-down/300?cb=20210428235135");
+    document.title = "🖂 ☯☼☜👎✌👍❄☜👎☸"
+	title.innerHTML = "☟🕆💣✌☠"
+	bamberfeaturestxt.innerHTML = "👎⚐☠❄ ✡⚐🕆 😐☠⚐🕈..."
+	bamberfeaturestxt1.innerHTML = "☟⚐🕈 ❄⚐ 💣☜☜❄..."
+	bamberfeaturestxt2.innerHTML = "✌ ☠☜🕈 ☞☼✋☜☠👎✍"
+	bamberfeaturestxt3.innerHTML = "❄🕆☼☠ ✌☼⚐🕆☠👎..."
+	bamberfeaturestxt4.innerHTML = "✌☠👎 💧☟✌😐☜ 💣✡ ☟✌☠👎."
+	inviteBtn.innerHTML = "❄☟🗏 👎🗐☼😐☠🗏💧💧 😐🗏🗏🏱💧 ☝☼📁🕈📂☠☝📪 ❄☟🗏 💧☟🗐👎📁🕈💧 👍🗐❄❄📂☠☝ 👎🗏🗏🏱🗏☼..."
+	var audio = new Audio('GASTER/mus_st_him.ogg');
+    audio.play();
+	audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+  isGaster = true
+  })
+	} else {
+	return
+	}
+	});
+</script>
 </body>
