@@ -1,10 +1,10 @@
 <head>
-<title>Haha yes</title>
+<title>undefined error at line 666 - "THERE'S NO ESCAPE."</title>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <style>
 body {
   margin: 0;
-  background-image: linear-gradient(#32a852, #40f570);
+  background: #000000;
   color: #ffffff;
   line-height: 1.5;
   font-family: 'Brush Script MT', cursive;
@@ -129,6 +129,14 @@ body {
   animation-iteration-count: infinite;
 }
 
+#THEREISNOESCAPE {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -149,70 +157,15 @@ color: #000000;
 </style>
 </head>
 <body>
-<center><h1 id="title">The perfect bot to make ur server based lmao</h1></center>
-<center><button class="inviteBtn" id="inviteBtn" onclick="location.href = 'https://discord.com/api/oauth2/authorize?client_id=933939804272488528&permissions=8&scope=bot';">INVITE DA BAMBAH</button></center>
-<center><h2 id="bamberfeaturestxt">BambiBot's features:</h2></center>
-<center><h2 id="bamberfeaturestxt1">- Pog music commands</h2></center>
-<center><h2 id="bamberfeaturestxt2">- Poggy updates almost every day</h2></center>
-<center><h2 id="bamberfeaturestxt3">- Joke commands. <b>A LOT</b> of joke commands.</h2></center>
-<center><h2 id="bamberfeaturestxt4">- A command where you can see news about Discord, like new controversy stuff or even Discord hackers</h2></center>
-<center><h2 id="him-hint">Also, here's a hint. He's hiding and the only way to find him is being curious.</h2></center>
-<center><image id="bamber" src="https://cdn.discordapp.com/attachments/922350611553460277/922529279101784124/SECRET_SONG_COVER.png"</image></center>
-<div class="glitchTxt" id="glitch">
-<!-- GOOD JOB. IT SEEMS YOU DISCOVERED ME. -->
-<center><p>🖂 ☯☼☜👎✌👍❄☜👎☸</p></center></div>
+<center><h1 id="THEREISNOESCAPE" class="shakingPage"></h1></center>
 <script>
-$(document).ready(function() {
-    	var isGaster = false
-	if (isGaster === false) {
-	  $(".glitchTxt").addClass("fade-away");
-	let mouseIn = false;
-  // glitch fades away after 10ms
-  setInterval(function() {
-    if (!mouseIn) {
-        $(".glitchTxt").addClass("fade-away");
-    }
-  }, 10);
-
-    $('.glitchTxt').on('mouseenter', () => {
-    mouseIn = true;
-  });
-  
-  $('.glitchTxt').on('mouseleave', () => {
-    mouseIn = false;
-  });
-
-  // glitch pops up on hover
-  $(".glitchTxt").hover(function() {
-    $(".glitchTxt").removeClass("fade-away")
-  });
-  $(".glitchTxt").click(function() {
-	$(".glitchTxt").addClass("fade-away")
-	$(".him-hint").addClass("fade-away")
-	$("body").addClass("glitch");
-	$("body").addClass("shakingPage");
-	$("body").addClass("blackBG");
-	$("#bamber").attr("src","GASTER/him.png");
-    document.title = "🖂 ☯☼☜👎✌👍❄☜👎☸"
-	title.innerHTML = "☟🕆💣✌☠"
-	bamberfeaturestxt.innerHTML = "👎⚐☠❄ ✡⚐🕆 😐☠⚐🕈..."
-	bamberfeaturestxt1.innerHTML = "☟⚐🕈 ❄⚐ 💣☜☜❄..."
-	bamberfeaturestxt2.innerHTML = "✌ ☠☜🕈 ☞☼✋☜☠👎✍"
-	bamberfeaturestxt3.innerHTML = "❄🕆☼☠ ✌☼⚐🕆☠👎..."
-	bamberfeaturestxt4.innerHTML = "✌☠👎 💧☟✌😐☜ 💣✡ ☟✌☠👎."
-	inviteBtn.innerHTML = "❄☟🗏 👎🗐☼😐☠🗏💧💧 😐🗏🗏🏱💧 ☝☼📁🕈📂☠☝📪 ❄☟🗏 💧☟🗐👎📁🕈💧 👍🗐❄❄📂☠☝ 👎🗏🗏🏱🗏☼..."
-	var audio = new Audio('GASTER/mus_st_him.ogg');
+document.addEventListener("click", function(){
+THEREISNOESCAPE.innerHTML = "THERE'S NO ESCAPE."
+var audio = new Audio('THE_LAUGH/laugh.mp3');
     audio.play();
 	audio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
+    window.close()
 }, false);
-  isGaster = true
-  return;
-  })
-	} else {
-	return
-	}
-	});
+})
 </script>
 </body>
