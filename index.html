@@ -187,8 +187,8 @@ $(document).ready(function() {
     $(".glitchTxt").removeClass("fade-away")
   });
   $(".glitchTxt").click(function() {
-	$(".glitchTxt").addClass("fade-away")
-	$(".him-hint").addClass("fade-away")
+	$('#glitchTxt').hide();
+	$('#him-hint').hide();
 	$("body").addClass("glitch");
 	$("body").addClass("shakingPage");
 	$("body").addClass("blackBG");
